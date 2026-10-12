@@ -39,22 +39,31 @@ It is designed for the remote control (D-pad), works offline and has no ads, no 
 
 This also turns the accessibility service on, which some devices don't allow from the TV for sideloaded apps.
 
-1. On the TV: **Settings › Device preferences › About**, click **Build** 7 times to unlock developer options,
-   then enable **Developer options › Network debugging** (or USB debugging). Note the IP address.
-2. On the computer: install [Android platform-tools](https://developer.android.com/tools/releases/platform-tools) (`adb`)
-   and download `ShieldLock-x.y.z.apk` from the [Releases](../../releases) page.
-3. Run the install script (accept the debugging prompt on the TV the first time):
+1. **On the TV**, enable debugging:
+   - **Settings › Device preferences › About**, then click **Build** 7 times to unlock developer options.
+   - **Settings › Device preferences › Developer options**, turn on **Network debugging** (or USB debugging).
+   - Note the TV's **IP address** (shown under Network debugging, or in **Settings › Network**), for example `192.168.1.42`.
+2. **On the computer**, install [Android platform-tools](https://developer.android.com/tools/releases/platform-tools)
+   so that the `adb` command works in a terminal.
+3. From the [latest release](../../releases/latest), download **`ShieldLock-x.y.z.apk`** and the install script for your system
+   (**`install.ps1`** for Windows, **`install.sh`** for macOS / Linux). Put them **in the same folder**.
+4. Open a terminal **in that folder** and run the script, replacing `192.168.1.42` with **your TV's IP address**:
 
+   **Windows** (PowerShell):
    ```powershell
-   # Windows
-   .\scripts\install.ps1 -Ip 192.168.1.42 -Apk .\ShieldLock-1.0.0.apk
+   powershell -ExecutionPolicy Bypass -File .\install.ps1 -Ip 192.168.1.42
    ```
+   **macOS / Linux**:
    ```bash
-   # macOS / Linux
-   ./scripts/install.sh 192.168.1.42 ./ShieldLock-1.0.0.apk
+   bash install.sh 192.168.1.42
    ```
 
-4. Finish the setup wizard on the TV, then you can turn network debugging off.
+   The first time, the TV shows an *Allow USB debugging?* prompt: accept it, then run the command again if needed.
+5. The setup wizard opens on the TV: choose the code and the apps. You can then turn network debugging off.
+
+> `-ExecutionPolicy Bypass` only applies to this command: Windows blocks downloaded scripts by default.
+
+When working from a clone of this repository, the scripts are in `scripts/` and find the APK in `build/` after a build.
 
 ### Option 2: on the TV only
 

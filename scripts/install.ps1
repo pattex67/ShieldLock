@@ -1,8 +1,9 @@
 # Installs ShieldLock on an NVIDIA Shield / Android TV device and turns the service on.
 # On the device first: Developer options > Network debugging (or USB debugging) enabled.
 #
-#   .\scripts\install.ps1 -Ip 192.168.1.42
-#   .\scripts\install.ps1 -Ip 192.168.1.42 -Apk .\ShieldLock-1.0.0.apk
+#   powershell -ExecutionPolicy Bypass -File .\install.ps1 -Ip <tv-ip>
+#
+# The APK is picked up automatically when it sits next to this script; otherwise pass -Apk.
 #
 param(
     [Parameter(Mandatory = $true)][string]$Ip,
@@ -16,8 +17,9 @@ $dev = "${Ip}:$Port"
 
 if (-not (Get-Command adb -ErrorAction SilentlyContinue)) { throw 'adb not found: install Android platform-tools.' }
 if (-not $Apk) {
+    # Next to the script (release download), or the repo's build output.
     $root = Split-Path $PSScriptRoot -Parent
-    $Apk = Get-ChildItem "$root\build\ShieldLock-*.apk", "$root\ShieldLock-*.apk" -ErrorAction SilentlyContinue |
+    $Apk = Get-ChildItem "$PSScriptRoot\ShieldLock-*.apk", "$root\build\ShieldLock-*.apk" -ErrorAction SilentlyContinue |
         Sort-Object LastWriteTime | Select-Object -Last 1 -ExpandProperty FullName
 }
 if (-not $Apk -or -not (Test-Path $Apk)) { throw 'APK not found: pass -Apk or run scripts\build.ps1 first.' }

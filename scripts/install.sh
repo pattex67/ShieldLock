@@ -2,21 +2,24 @@
 # Installs ShieldLock on an NVIDIA Shield / Android TV device and turns the service on.
 # On the device first: Developer options > Network debugging (or USB debugging) enabled.
 #
-#   ./scripts/install.sh 192.168.1.42
-#   ./scripts/install.sh 192.168.1.42 ./ShieldLock-1.0.0.apk
+#   bash install.sh <tv-ip>
+#
+# The APK is picked up automatically when it sits next to this script; otherwise pass it
+# as the 2nd argument: bash install.sh <tv-ip> path/to/ShieldLock.apk
 #
 set -euo pipefail
-IP="${1:?usage: install.sh <device-ip> [apk] [port]}"
+IP="${1:?usage: install.sh <tv-ip> [apk] [port]}"
 APK="${2:-}"
 PORT="${3:-5555}"
 PKG=app.shieldlock
 SVC="$PKG/$PKG.LockService"
 DEV="$IP:$PORT"
-ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+HERE="$(cd "$(dirname "$0")" && pwd)"
 
 command -v adb >/dev/null || { echo "adb not found: install Android platform-tools." >&2; exit 1; }
 if [ -z "$APK" ]; then
-  APK="$(ls -t "$ROOT"/build/ShieldLock-*.apk "$ROOT"/ShieldLock-*.apk 2>/dev/null | head -n 1 || true)"
+  # Next to the script (release download), or the repo's build output.
+  APK="$(ls -t "$HERE"/ShieldLock-*.apk "$HERE"/../build/ShieldLock-*.apk 2>/dev/null | head -n 1 || true)"
 fi
 [ -n "$APK" ] && [ -f "$APK" ] || { echo "APK not found: pass it as 2nd argument or run scripts/build.sh first." >&2; exit 1; }
 

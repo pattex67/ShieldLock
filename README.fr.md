@@ -35,22 +35,31 @@ Pensée pour la télécommande, elle fonctionne hors ligne, sans pub, sans pista
 
 Le script active aussi le service d'accessibilité, ce que certains appareils refusent depuis la TV pour une appli installée hors Play Store.
 
-1. Sur la TV : **Paramètres › Préférences de l'appareil › À propos**, cliquez 7 fois sur **Build** pour débloquer les options pour les développeurs,
-   puis activez **Options pour les développeurs › Débogage réseau** (ou débogage USB). Notez l'adresse IP.
-2. Sur l'ordinateur : installez les [Android platform-tools](https://developer.android.com/tools/releases/platform-tools) (`adb`)
-   et téléchargez `ShieldLock-x.y.z.apk` depuis la page [Releases](../../releases).
-3. Lancez le script d'installation (acceptez la demande de débogage sur la TV la première fois) :
+1. **Sur la TV**, activez le débogage :
+   - **Paramètres › Préférences de l'appareil › À propos**, puis cliquez 7 fois sur **Build** pour débloquer les options pour les développeurs.
+   - **Paramètres › Préférences de l'appareil › Options pour les développeurs**, activez **Débogage réseau** (ou débogage USB).
+   - Notez l'**adresse IP** de la TV (affichée sous Débogage réseau, ou dans **Paramètres › Réseau**), par exemple `192.168.1.42`.
+2. **Sur l'ordinateur**, installez les [Android platform-tools](https://developer.android.com/tools/releases/platform-tools)
+   pour que la commande `adb` fonctionne dans un terminal.
+3. Depuis la [dernière release](../../releases/latest), téléchargez **`ShieldLock-x.y.z.apk`** et le script d'installation de votre système
+   (**`install.ps1`** pour Windows, **`install.sh`** pour macOS / Linux). Mettez-les **dans le même dossier**.
+4. Ouvrez un terminal **dans ce dossier** et lancez le script en remplaçant `192.168.1.42` par **l'adresse IP de votre TV** :
 
+   **Windows** (PowerShell) :
    ```powershell
-   # Windows
-   .\scripts\install.ps1 -Ip 192.168.1.42 -Apk .\ShieldLock-1.0.0.apk
+   powershell -ExecutionPolicy Bypass -File .\install.ps1 -Ip 192.168.1.42
    ```
+   **macOS / Linux** :
    ```bash
-   # macOS / Linux
-   ./scripts/install.sh 192.168.1.42 ./ShieldLock-1.0.0.apk
+   bash install.sh 192.168.1.42
    ```
 
-4. Terminez l'assistant sur la TV, puis vous pouvez désactiver le débogage réseau.
+   La première fois, la TV affiche *Autoriser le débogage USB ?* : acceptez, puis relancez la commande si besoin.
+5. L'assistant s'ouvre sur la TV : choisissez le code et les applis. Vous pouvez ensuite désactiver le débogage réseau.
+
+> `-ExecutionPolicy Bypass` ne s'applique qu'à cette commande : Windows bloque par défaut les scripts téléchargés.
+
+Depuis un clone de ce dépôt, les scripts sont dans `scripts/` et trouvent l'APK dans `build/` après une compilation.
 
 ### Option 2 : uniquement sur la TV
 
