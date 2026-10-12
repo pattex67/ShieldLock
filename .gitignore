@@ -4,6 +4,9 @@ build/
 *.dex
 *.class
 
+# adb downloaded by the install scripts
+platform-tools/
+
 # Signing (never commit keys or passwords)
 signing.properties
 *.jks

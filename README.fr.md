@@ -39,11 +39,9 @@ Le script active aussi le service d'accessibilité, ce que certains appareils re
    - **Paramètres › Préférences de l'appareil › À propos**, puis cliquez 7 fois sur **Build** pour débloquer les options pour les développeurs.
    - **Paramètres › Préférences de l'appareil › Options pour les développeurs**, activez **Débogage réseau** (ou débogage USB).
    - Notez l'**adresse IP** de la TV (affichée sous Débogage réseau, ou dans **Paramètres › Réseau**). Elle ressemble à `192.168.x.x`.
-2. **Sur l'ordinateur**, installez les [Android platform-tools](https://developer.android.com/tools/releases/platform-tools)
-   pour que la commande `adb` fonctionne dans un terminal.
-3. Depuis la [dernière release](../../releases/latest), téléchargez **`ShieldLock-x.y.z.apk`** et le script d'installation de votre système
+2. Depuis la [dernière release](../../releases/latest), téléchargez **`ShieldLock-x.y.z.apk`** et le script d'installation de votre système
    (**`install.ps1`** pour Windows, **`install.sh`** pour macOS / Linux). Mettez-les **dans le même dossier**.
-4. Ouvrez un terminal **dans ce dossier** et lancez le script en remplaçant `192.168.x.x` par **l'adresse IP de votre TV** :
+3. Ouvrez un terminal **dans ce dossier** et lancez le script en remplaçant `192.168.x.x` par **l'adresse IP de votre TV** :
 
    **Windows** (PowerShell) :
    ```powershell
@@ -54,8 +52,12 @@ Le script active aussi le service d'accessibilité, ce que certains appareils re
    bash install.sh 192.168.x.x
    ```
 
+   Si `adb` n'est pas présent sur l'ordinateur, le script propose de télécharger les
+   [platform-tools](https://developer.android.com/tools/releases/platform-tools) officiels de Google (environ 7 Mo) dans un dossier
+   `platform-tools` à côté de lui. Rien n'est installé dans le système : supprimez ce dossier pour l'enlever.
+
    La première fois, la TV affiche *Autoriser le débogage USB ?* : acceptez, puis relancez la commande si besoin.
-5. L'assistant s'ouvre sur la TV : choisissez le code et les applis. Vous pouvez ensuite désactiver le débogage réseau.
+4. L'assistant s'ouvre sur la TV : choisissez le code et les applis. Vous pouvez ensuite désactiver le débogage réseau.
 
 > `-ExecutionPolicy Bypass` ne s'applique qu'à cette commande : Windows bloque par défaut les scripts téléchargés.
 
