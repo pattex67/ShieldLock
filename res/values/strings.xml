@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">ShieldLock</string>
+    <string name="service_description">Asks for the parental code before opening locked apps.</string>
+
+    <!-- PIN screen -->
+    <string name="parental_control">Parental control</string>
+    <string name="hint_back_quit">Press Back to exit</string>
+    <string name="hint_back_cancel">Press Back to cancel</string>
+    <string name="pin_locked_subtitle">This app is protected.\nEnter the 4-digit code.</string>
+    <string name="err_too_many">Too many attempts. Try again in %d s</string>
+    <string name="err_wrong_blocked">Wrong code. Locked for %d s</string>
+    <string name="err_wrong">Wrong code</string>
+
+    <!-- Login and code setup -->
+    <string name="settings_eyebrow">Settings</string>
+    <string name="login_subtitle">Enter the parental code\nto change the protection.</string>
+    <string name="step">Step %1$d of %2$d</string>
+    <string name="welcome">Welcome</string>
+    <string name="setup_pin_subtitle">Choose a 4-digit parental code.\nIt will be required to open\nlocked apps.</string>
+    <string name="new_pin_eyebrow">New code</string>
+    <string name="new_pin_title">Choose a code</string>
+    <string name="new_pin_subtitle">4 digits, entered twice.</string>
+    <string name="confirm_pin">Confirm the code</string>
+    <string name="enter_again">Enter it again</string>
+    <string name="pin_changed">Code changed</string>
+    <string name="pin_mismatch">The codes don\'t match</string>
+
+    <!-- App list -->
+    <string name="apps_title">Apps</string>
+    <string name="protection_title">Protection</string>
+    <string name="setup_apps_intro">Streaming apps, app stores and\nSettings are pre-selected.\nAdjust as needed.</string>
+    <string name="continue_btn">Continue</string>
+    <string name="service_on">●  Service active</string>
+    <string name="service_off">●  Service inactive</string>
+    <string name="config_explain">The code is asked on every launch.\nThe lock comes back when you go\nhome or the device goes to sleep.</string>
+    <string name="change_pin">Change code</string>
+    <string name="enable_service">Turn on the service</string>
+    <string name="installed_apps">Installed apps</string>
+    <string name="locked">Locked</string>
+    <string name="unlocked">Unlocked</string>
+    <plurals name="locked_count">
+        <item quantity="one">%d app locked</item>
+        <item quantity="other">%d apps locked</item>
+    </plurals>
+
+    <!-- Service activation -->
+    <string name="activate_title">Turn on protection</string>
+    <string name="activate_step1">Open Accessibility with the button below.</string>
+    <string name="activate_step2">Select “ShieldLock”, then turn it on.</string>
+    <string name="activate_step3">Come back here with the Back button.</string>
+    <string name="activate_note">If the option is greyed out, install ShieldLock from a computer with the\ninstall script: it turns the service on automatically.</string>
+    <string name="open_accessibility">Open Accessibility</string>
+    <string name="finish">Finish</string>
+    <string name="back">Back</string>
+    <string name="service_on_long">●  Service active, protection is on</string>
+    <string name="settings_not_found">Settings not found</string>
+</resources>

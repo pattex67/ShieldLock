@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="service_description">Demande le code parental avant d\'ouvrir les applications verrouillées.</string>
+
+    <string name="parental_control">Contrôle parental</string>
+    <string name="hint_back_quit">Retour pour quitter</string>
+    <string name="hint_back_cancel">Retour pour annuler</string>
+    <string name="pin_locked_subtitle">Cette application est protégée.\nEntrez le code à 4 chiffres.</string>
+    <string name="err_too_many">Trop d\'essais. Réessayez dans %d s</string>
+    <string name="err_wrong_blocked">Code incorrect. Bloqué %d s</string>
+    <string name="err_wrong">Code incorrect</string>
+
+    <string name="settings_eyebrow">Réglages</string>
+    <string name="login_subtitle">Entrez le code parental pour\nmodifier la protection.</string>
+    <string name="step">Étape %1$d sur %2$d</string>
+    <string name="welcome">Bienvenue</string>
+    <string name="setup_pin_subtitle">Choisissez le code parental à 4 chiffres.\nIl sera demandé pour ouvrir les applis\nverrouillées.</string>
+    <string name="new_pin_eyebrow">Nouveau code</string>
+    <string name="new_pin_title">Choisissez un code</string>
+    <string name="new_pin_subtitle">4 chiffres, à saisir deux fois.</string>
+    <string name="confirm_pin">Confirmez le code</string>
+    <string name="enter_again">Saisissez-le à nouveau</string>
+    <string name="pin_changed">Code modifié</string>
+    <string name="pin_mismatch">Les codes ne correspondent pas</string>
+
+    <string name="apps_title">Applications</string>
+    <string name="protection_title">Protection</string>
+    <string name="setup_apps_intro">Le streaming, les magasins d\'applis\net les Paramètres sont cochés d\'office.\nAjustez si besoin.</string>
+    <string name="continue_btn">Continuer</string>
+    <string name="service_on">●  Service actif</string>
+    <string name="service_off">●  Service inactif</string>
+    <string name="config_explain">Le code est demandé à chaque ouverture.\nLe verrou revient dès le retour à\nl\'accueil ou à la mise en veille.</string>
+    <string name="change_pin">Changer le code</string>
+    <string name="enable_service">Activer le service</string>
+    <string name="installed_apps">Applications installées</string>
+    <string name="locked">Verrouillé</string>
+    <string name="unlocked">Libre</string>
+    <plurals name="locked_count">
+        <item quantity="one">%d application verrouillée</item>
+        <item quantity="many">%d applications verrouillées</item>
+        <item quantity="other">%d applications verrouillées</item>
+    </plurals>
+
+    <string name="activate_title">Activer la protection</string>
+    <string name="activate_step1">Ouvrez l\'accessibilité avec le bouton ci-dessous.</string>
+    <string name="activate_step2">Choisissez « ShieldLock », puis activez-le.</string>
+    <string name="activate_step3">Revenez ici avec la touche Retour.</string>
+    <string name="activate_note">Si l\'option est grisée, installez ShieldLock depuis un ordinateur avec le\nscript d\'installation : il active le service automatiquement.</string>
+    <string name="open_accessibility">Ouvrir l\'accessibilité</string>
+    <string name="finish">Terminer</string>
+    <string name="back">Retour</string>
+    <string name="service_on_long">●  Service actif, la protection fonctionne</string>
+    <string name="settings_not_found">Paramètres introuvables</string>
+</resources>
