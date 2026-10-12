@@ -38,20 +38,20 @@ Le script active aussi le service d'accessibilité, ce que certains appareils re
 1. **Sur la TV**, activez le débogage :
    - **Paramètres › Préférences de l'appareil › À propos**, puis cliquez 7 fois sur **Build** pour débloquer les options pour les développeurs.
    - **Paramètres › Préférences de l'appareil › Options pour les développeurs**, activez **Débogage réseau** (ou débogage USB).
-   - Notez l'**adresse IP** de la TV (affichée sous Débogage réseau, ou dans **Paramètres › Réseau**), par exemple `192.168.1.42`.
+   - Notez l'**adresse IP** de la TV (affichée sous Débogage réseau, ou dans **Paramètres › Réseau**). Elle ressemble à `192.168.x.x`.
 2. **Sur l'ordinateur**, installez les [Android platform-tools](https://developer.android.com/tools/releases/platform-tools)
    pour que la commande `adb` fonctionne dans un terminal.
 3. Depuis la [dernière release](../../releases/latest), téléchargez **`ShieldLock-x.y.z.apk`** et le script d'installation de votre système
    (**`install.ps1`** pour Windows, **`install.sh`** pour macOS / Linux). Mettez-les **dans le même dossier**.
-4. Ouvrez un terminal **dans ce dossier** et lancez le script en remplaçant `192.168.1.42` par **l'adresse IP de votre TV** :
+4. Ouvrez un terminal **dans ce dossier** et lancez le script en remplaçant `192.168.x.x` par **l'adresse IP de votre TV** :
 
    **Windows** (PowerShell) :
    ```powershell
-   powershell -ExecutionPolicy Bypass -File .\install.ps1 -Ip 192.168.1.42
+   powershell -ExecutionPolicy Bypass -File .\install.ps1 -Ip 192.168.x.x
    ```
    **macOS / Linux** :
    ```bash
-   bash install.sh 192.168.1.42
+   bash install.sh 192.168.x.x
    ```
 
    La première fois, la TV affiche *Autoriser le débogage USB ?* : acceptez, puis relancez la commande si besoin.

@@ -42,20 +42,20 @@ This also turns the accessibility service on, which some devices don't allow fro
 1. **On the TV**, enable debugging:
    - **Settings › Device preferences › About**, then click **Build** 7 times to unlock developer options.
    - **Settings › Device preferences › Developer options**, turn on **Network debugging** (or USB debugging).
-   - Note the TV's **IP address** (shown under Network debugging, or in **Settings › Network**), for example `192.168.1.42`.
+   - Note the TV's **IP address** (shown under Network debugging, or in **Settings › Network**). It looks like `192.168.x.x`.
 2. **On the computer**, install [Android platform-tools](https://developer.android.com/tools/releases/platform-tools)
    so that the `adb` command works in a terminal.
 3. From the [latest release](../../releases/latest), download **`ShieldLock-x.y.z.apk`** and the install script for your system
    (**`install.ps1`** for Windows, **`install.sh`** for macOS / Linux). Put them **in the same folder**.
-4. Open a terminal **in that folder** and run the script, replacing `192.168.1.42` with **your TV's IP address**:
+4. Open a terminal **in that folder** and run the script, replacing `192.168.x.x` with **your TV's IP address**:
 
    **Windows** (PowerShell):
    ```powershell
-   powershell -ExecutionPolicy Bypass -File .\install.ps1 -Ip 192.168.1.42
+   powershell -ExecutionPolicy Bypass -File .\install.ps1 -Ip 192.168.x.x
    ```
    **macOS / Linux**:
    ```bash
-   bash install.sh 192.168.1.42
+   bash install.sh 192.168.x.x
    ```
 
    The first time, the TV shows an *Allow USB debugging?* prompt: accept it, then run the command again if needed.
