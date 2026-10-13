@@ -31,15 +31,43 @@ Pensée pour la télécommande, elle fonctionne hors ligne, sans pub, sans pista
 
 ## Installation
 
-### Option 1 : depuis un ordinateur (recommandé)
+Deux méthodes : **uniquement sur la TV** avec l'appli Downloader (la plus simple, sans mode développeur),
+ou **depuis un ordinateur** avec un script.
 
-Le script active aussi le service d'accessibilité, ce que certains appareils refusent depuis la TV pour une appli installée hors Play Store.
+### Option 1 : sur la TV avec Downloader (sans ordinateur, sans mode développeur)
+
+Fonctionne sur toutes les NVIDIA Shield. Environ 2 minutes.
+
+1. Sur la TV, installez **Downloader** (de AFTVnews) depuis le Play Store.
+2. Ouvrez Downloader, sélectionnez le champ d'adresse et tapez :
+
+   ```
+   github.com/pattex67/ShieldLock/releases/latest/download/ShieldLock.apk
+   ```
+
+   Ce lien pointe toujours vers la dernière version.
+3. Sélectionnez **Go**. À la fin du téléchargement, sélectionnez **Installer**.
+   La première fois, Android demande d'autoriser Downloader à installer des applis inconnues : ouvrez les paramètres proposés,
+   activez Downloader, puis revenez et sélectionnez à nouveau **Installer**.
+4. Ouvrez **ShieldLock** (dans vos applis) et suivez l'assistant : choix du code, puis des applis à verrouiller.
+5. À l'étape 3 de l'assistant, sélectionnez **Ouvrir l'accessibilité**, choisissez **ShieldLock** et activez-le
+   (**Paramètres › Préférences de l'appareil › Accessibilité** sur Shield, **Paramètres › Système › Accessibilité** sur Google TV).
+   Faites Retour : l'assistant affiche *Service actif*.
+6. Vous pouvez supprimer l'APK quand Downloader le propose.
+
+> Sur certains boîtiers Google TV récents (Android 13 et plus), l'interrupteur ShieldLock peut être grisé dans l'Accessibilité
+> pour une appli installée hors Play Store. Dans ce cas, utilisez l'option 2.
+
+### Option 2 : depuis un ordinateur
+
+Le script installe l'appli **et** active le service d'accessibilité : plus besoin de l'étape 5 ci-dessus, et ça contourne
+l'interrupteur grisé.
 
 1. **Sur la TV**, activez le débogage :
    - **Paramètres › Préférences de l'appareil › À propos**, puis cliquez 7 fois sur **Build** pour débloquer les options pour les développeurs.
    - **Paramètres › Préférences de l'appareil › Options pour les développeurs**, activez **Débogage réseau** (ou débogage USB).
    - Notez l'**adresse IP** de la TV (affichée sous Débogage réseau, ou dans **Paramètres › Réseau**). Elle ressemble à `192.168.x.x`.
-2. Depuis la [dernière release](../../releases/latest), téléchargez **`ShieldLock-x.y.z.apk`** et le script d'installation de votre système
+2. Depuis la [dernière release](../../releases/latest), téléchargez **`ShieldLock.apk`** et le script d'installation de votre système
    (**`install.ps1`** pour Windows, **`install.sh`** pour macOS / Linux). Mettez-les **dans le même dossier**.
 3. Ouvrez un terminal **dans ce dossier** et lancez le script en remplaçant `192.168.x.x` par **l'adresse IP de votre TV** :
 
@@ -63,10 +91,9 @@ Le script active aussi le service d'accessibilité, ce que certains appareils re
 
 Depuis un clone de ce dépôt, les scripts sont dans `scripts/` et trouvent l'APK dans `build/` après une compilation.
 
-### Option 2 : uniquement sur la TV
+### Mise à jour
 
-Installez l'APK (par exemple avec l'appli *Downloader*), ouvrez **ShieldLock** et suivez l'assistant.
-À l'étape 3, activez **ShieldLock** dans **Paramètres › Préférences de l'appareil › Accessibilité**.
+Installez le nouvel APK par-dessus l'ancien, de la même façon. Le code, la liste des applis et le service sont conservés.
 
 ## Fonctionnement
 

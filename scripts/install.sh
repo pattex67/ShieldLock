@@ -70,9 +70,9 @@ adb() { "$ADB" "$@"; }
 
 if [ -z "$APK" ]; then
   # Next to the script (release download), or the repo's build output.
-  APK="$(ls -t "$HERE"/ShieldLock-*.apk "$HERE"/../build/ShieldLock-*.apk 2>/dev/null | head -n 1 || true)"
+  APK="$(ls -t "$HERE"/ShieldLock*.apk "$HERE"/../build/ShieldLock*.apk 2>/dev/null | head -n 1 || true)"
 fi
-[ -n "$APK" ] && [ -f "$APK" ] || { echo "APK not found: put ShieldLock-x.y.z.apk next to this script, or pass it as 2nd argument." >&2; exit 1; }
+[ -n "$APK" ] && [ -f "$APK" ] || { echo "APK not found: put ShieldLock.apk next to this script, or pass it as 2nd argument." >&2; exit 1; }
 
 echo "Connecting to $DEV..."
 adb connect "$DEV"

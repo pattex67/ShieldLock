@@ -80,4 +80,7 @@ APK="$OUT/ShieldLock-$VERSION_NAME.apk"
 "$APKSIGNER" sign --ks "$KS" --ks-key-alias "$ALIAS" --ks-pass "pass:$STORE_PASS" --key-pass "pass:$KEY_PASS" \
   --out "$APK" "$OUT/aligned.apk"
 
-echo "OK -> $APK"
+# Unversioned copy: the release asset behind the stable .../releases/latest/download/ShieldLock.apk link.
+cp "$APK" "$OUT/ShieldLock.apk"
+
+echo "OK -> $APK (+ build/ShieldLock.apk)"

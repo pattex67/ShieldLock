@@ -87,4 +87,7 @@ $apk = Join-Path $out "ShieldLock-$VersionName.apk"
     --out $apk "$out\aligned.apk"
 if ($LASTEXITCODE) { throw 'apksigner failed' }
 
-Write-Host "OK -> $apk"
+# Unversioned copy: the release asset behind the stable .../releases/latest/download/ShieldLock.apk link.
+Copy-Item $apk (Join-Path $out 'ShieldLock.apk') -Force
+
+Write-Host "OK -> $apk (+ build\ShieldLock.apk)"

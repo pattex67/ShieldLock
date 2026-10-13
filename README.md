@@ -35,15 +35,43 @@ It is designed for the remote control (D-pad), works offline and has no ads, no 
 
 ## Install
 
-### Option 1: from a computer (recommended)
+Two ways: **on the TV only** with the Downloader app (easiest, no developer mode needed),
+or **from a computer** with a script.
 
-This also turns the accessibility service on, which some devices don't allow from the TV for sideloaded apps.
+### Option 1: on the TV with Downloader (no computer, no developer mode)
+
+Works on every NVIDIA Shield. About 2 minutes.
+
+1. On the TV, install **Downloader** (by AFTVnews) from the Play Store.
+2. Open Downloader, select the URL field and type:
+
+   ```
+   github.com/pattex67/ShieldLock/releases/latest/download/ShieldLock.apk
+   ```
+
+   This link always points to the latest version.
+3. Select **Go**. When the download ends, select **Install**.
+   The first time, Android asks to allow Downloader to install unknown apps: open the settings it offers,
+   turn Downloader on, then go back and select **Install** again.
+4. Open **ShieldLock** (in your apps) and follow the wizard: choose the code, then the apps to lock.
+5. At step 3 of the wizard, select **Open Accessibility**, choose **ShieldLock** and turn it on
+   (**Settings › Device preferences › Accessibility** on Shield, **Settings › System › Accessibility** on Google TV).
+   Press Back: the wizard shows *Service active*.
+6. You can delete the APK when Downloader offers it.
+
+> On some recent Google TV devices (Android 13+), the ShieldLock switch in Accessibility can be greyed out for apps
+> installed outside the Play Store. In that case, use option 2.
+
+### Option 2: from a computer
+
+The script installs the app **and** turns the accessibility service on, which skips step 5 above and works around
+the greyed-out switch.
 
 1. **On the TV**, enable debugging:
    - **Settings › Device preferences › About**, then click **Build** 7 times to unlock developer options.
    - **Settings › Device preferences › Developer options**, turn on **Network debugging** (or USB debugging).
    - Note the TV's **IP address** (shown under Network debugging, or in **Settings › Network**). It looks like `192.168.x.x`.
-2. From the [latest release](../../releases/latest), download **`ShieldLock-x.y.z.apk`** and the install script for your system
+2. From the [latest release](../../releases/latest), download **`ShieldLock.apk`** and the install script for your system
    (**`install.ps1`** for Windows, **`install.sh`** for macOS / Linux). Put them **in the same folder**.
 3. Open a terminal **in that folder** and run the script, replacing `192.168.x.x` with **your TV's IP address**:
 
@@ -67,10 +95,9 @@ This also turns the accessibility service on, which some devices don't allow fro
 
 When working from a clone of this repository, the scripts are in `scripts/` and find the APK in `build/` after a build.
 
-### Option 2: on the TV only
+### Updating
 
-Sideload the APK (for example with the *Downloader* app), open **ShieldLock** and follow the wizard.
-At step 3, enable **ShieldLock** in **Settings › Device preferences › Accessibility**.
+Install the new APK over the old one, the same way. The code, the app list and the service are kept.
 
 ## How it works
 

@@ -63,10 +63,10 @@ Write-Host "Using adb: $adb"
 if (-not $Apk) {
     # Next to the script (release download), or the repo's build output.
     $root = Split-Path $PSScriptRoot -Parent
-    $Apk = Get-ChildItem "$PSScriptRoot\ShieldLock-*.apk", "$root\build\ShieldLock-*.apk" -ErrorAction SilentlyContinue |
+    $Apk = Get-ChildItem "$PSScriptRoot\ShieldLock*.apk", "$root\build\ShieldLock*.apk" -ErrorAction SilentlyContinue |
         Sort-Object LastWriteTime | Select-Object -Last 1 -ExpandProperty FullName
 }
-if (-not $Apk -or -not (Test-Path $Apk)) { throw 'APK not found: put ShieldLock-x.y.z.apk next to this script, or pass -Apk.' }
+if (-not $Apk -or -not (Test-Path $Apk)) { throw 'APK not found: put ShieldLock.apk next to this script, or pass -Apk.' }
 
 Write-Host "Connecting to $dev..."
 & $adb connect $dev | Out-Host
