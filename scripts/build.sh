@@ -7,8 +7,8 @@
 # Signing: uses signing.properties at the repo root if present (see README), otherwise
 # the Android debug keystore.
 set -euo pipefail
-VERSION_NAME=1.0.0
-VERSION_CODE=1
+VERSION_NAME=1.0.1
+VERSION_CODE=2
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 

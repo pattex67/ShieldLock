@@ -6,8 +6,8 @@
 # Signing: uses signing.properties at the repo root if present (see README), otherwise
 # the Android debug keystore.
 $ErrorActionPreference = 'Stop'
-$VersionName = '1.0.0'
-$VersionCode = 1
+$VersionName = '1.0.1'
+$VersionCode = 2
 
 $root = Split-Path $PSScriptRoot -Parent
 
