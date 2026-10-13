@@ -39,13 +39,10 @@ ou **depuis un ordinateur** avec un script.
 Fonctionne sur toutes les NVIDIA Shield. Environ 2 minutes.
 
 1. Sur la TV, installez **Downloader** (de AFTVnews) depuis le Play Store.
-2. Ouvrez Downloader, sélectionnez le champ d'adresse et tapez :
+2. Ouvrez Downloader, sélectionnez le champ d'adresse et tapez le code **`8514783`**.
 
-   ```
-   github.com/pattex67/ShieldLock/releases/latest/download/ShieldLock.apk
-   ```
-
-   Ce lien pointe toujours vers la dernière version.
+   Il pointe vers la dernière version. À défaut, vous pouvez aussi taper le lien complet :
+   `github.com/pattex67/ShieldLock/releases/latest/download/ShieldLock.apk`
 3. Sélectionnez **Go**. À la fin du téléchargement, sélectionnez **Installer**.
    La première fois, Android demande d'autoriser Downloader à installer des applis inconnues : ouvrez les paramètres proposés,
    activez Downloader, puis revenez et sélectionnez à nouveau **Installer**.
